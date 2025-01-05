@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaPulse.io - Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo {
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        .logo svg {
+            width: 150px;
+            height: 150px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 2s ease-in;
+        }
+
+        p {
+            font-size: 1.5rem;
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: #e0e0e0;
+            animation: slideUp 1s ease-out;
+        }
+
+        .pulse {
+            width: 20px;
+            height: 20px;
+            background: #4ecdc4;
+            border-radius: 50%;
+            margin: 2rem auto;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#ff6b6b" />
+                    <stop offset="100%" style="stop-color:#4ecdc4" />
+                </linearGradient>
+            </defs>
+            <path fill="url(#logoGradient)" d="M50 10 L90 90 L10 90 Z">
+                <animate attributeName="d" 
+                    dur="4s" 
+                    repeatCount="indefinite"
+                    values="M50 10 L90 90 L10 90 Z;
+                            M50 20 L80 80 L20 80 Z;
+                            M50 10 L90 90 L10 90 Z"/>
+            </path>
+        </svg>
+    </div>
+    <h1>NovaPulse.io</h1>
+    <p>Something extraordinary is brewing in the digital realm. A new pulse of innovation is about to transform the way we think about technology. Stay tuned for the revolution.</p>
+    <div class="pulse"></div>
+</body>
+</html>
