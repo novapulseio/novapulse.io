@@ -13,8 +13,8 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: #ffffff;
+            background: #ffffff;
+            color: #1E1E2D;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -25,22 +25,43 @@
         }
 
         .logo {
-            margin-bottom: 2rem;
-            animation: pulse 2s infinite;
-        }
-
-        .logo svg {
-            width: 150px;
-            height: 150px;
-        }
-
-        h1 {
+            margin-bottom: 3rem;
+            position: relative;
             font-size: 3.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: fadeIn 2s ease-in;
+            font-weight: bold;
+        }
+
+        .logo-text {
+            display: inline-block;
+        }
+
+        .logo-normal {
+            color: #1E1E2D;
+        }
+
+        .logo-highlight {
+            color: #6B5BE6;
+        }
+
+        .logo-dot {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #6B5BE6;
+            border-radius: 50%;
+            right: -20px;
+            top: 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .logo-line {
+            position: absolute;
+            height: 2px;
+            width: 100px;
+            background: linear-gradient(90deg, transparent, #6B5BE6);
+            right: -110px;
+            top: 6px;
+            opacity: 0.5;
         }
 
         p {
@@ -48,14 +69,14 @@
             max-width: 600px;
             line-height: 1.6;
             margin-bottom: 2rem;
-            color: #e0e0e0;
+            color: #666;
             animation: slideUp 1s ease-out;
         }
 
         .pulse {
             width: 20px;
             height: 20px;
-            background: #4ecdc4;
+            background: #6B5BE6;
             border-radius: 50%;
             margin: 2rem auto;
             animation: pulse 2s infinite;
@@ -67,9 +88,10 @@
             100% { transform: scale(1); opacity: 1; }
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
 
         @keyframes slideUp {
@@ -80,24 +102,12 @@
 </head>
 <body>
     <div class="logo">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#ff6b6b" />
-                    <stop offset="100%" style="stop-color:#4ecdc4" />
-                </linearGradient>
-            </defs>
-            <path fill="url(#logoGradient)" d="M50 10 L90 90 L10 90 Z">
-                <animate attributeName="d" 
-                    dur="4s" 
-                    repeatCount="indefinite"
-                    values="M50 10 L90 90 L10 90 Z;
-                            M50 20 L80 80 L20 80 Z;
-                            M50 10 L90 90 L10 90 Z"/>
-            </path>
-        </svg>
+        <div class="logo-text">
+            <span class="logo-normal">Nova</span><span class="logo-highlight">pulse</span>
+        </div>
+        <div class="logo-dot"></div>
+        <div class="logo-line"></div>
     </div>
-    <h1>NovaPulse.io</h1>
     <p>Something extraordinary is brewing in the digital realm. A new pulse of innovation is about to transform the way we think about technology. Stay tuned for the revolution.</p>
     <div class="pulse"></div>
 </body>
